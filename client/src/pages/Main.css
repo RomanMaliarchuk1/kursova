@@ -1,0 +1,269 @@
+.dashboard {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #353A40, #2A2E33);
+  color: #91A5A7;
+}
+
+.navbar {
+  background: rgba(42, 46, 51, 0.95);
+  border-bottom: 1px solid rgba(145, 165, 167, 0.1);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+}
+
+.navbar-content {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.user-settings {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.settings-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5
+  .5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #91A5A7;
+  transition: color 0.3s;
+}
+
+.settings-button:hover {
+  color: #CD873C;
+}
+
+.user-initials {
+  width: 30px;
+  height: 30px;
+  background-color: #5E68E6;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.main-content {
+  margin-top: 70px; /* Adjust for fixed navbar height */
+  padding: 2rem;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+}
+
+.tab-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: rgba(145, 165, 167, 0.1);
+  border-radius: 0.5rem;
+  color: #91A5A7;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.tab-button.active {
+  background: #5E68E6;
+  color: white;
+}
+
+.tab-content {
+  margin-top: 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.create-button {
+  background-color: #CD873C;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tournament-cards,
+.teams-list,
+.matches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tournament-card,
+.team-item,
+.match-item {
+  background-color: #2A2E33;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(145, 165, 167, 0.1);
+  transition: transform 0.2s;
+}
+
+.tournament-card:hover,
+.team-item:hover,
+.match-item:hover {
+  transform: scale(1.02);
+}
+
+.tournament-header,
+.match-info,
+.team-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tournament-title,
+.team-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.tournament-status,
+.team-details,
+.match-time {
+  font-size: 0.875rem;
+  color: #B0B8B9;
+}
+
+.button-container {
+  display: flex;
+}
+
+.details-button,
+.register-button,
+.manage-button {
+  background-color: #5E68E6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #91A5A7;
+  background-color: #2A2E33;
+  color: #91A5A7;
+}
+
+.tournament-select {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #91A5A7;
+  background-color: #2A2E33;
+  color: #91A5A7;
+}
+
+.tournament-badge {
+  background-color: #CD873C;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.alert-icon {
+  color: red;
+}
+
+/* Modal styles */
+.auth-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 100%;
+  max-width: 450px;
+  background: var(--white);
+  border-radius: 15px;
+  padding: 2.5rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-gray);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.modal-overlay.active .auth-modal {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  pointer-events: auto; /* Allow interaction with modal when active */
+}
+
+.auth-modal h2 {
+  color: var(--dark-gray);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Close button style */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--dark-gray);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: var(--light-gray);
+}

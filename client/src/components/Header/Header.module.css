@@ -1,0 +1,58 @@
+/* Навігація */
+nav {
+    background-color: rgba(42, 46, 51, 0.3);
+    padding: 1.2rem;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(145, 165, 167, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+nav.scrolled {
+    background-color: rgba(42, 46, 51, 0.95);
+    padding: 1rem;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--light-gray);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--orange);
+}
+
+.nav-button {
+    background-color: transparent;
+    color: var(--light-gray);
+    border: 1px solid var(--light-gray);
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: var(--light-gray);
+    color: var(--darker-gray);
+    transform: translateY(-2px);
+}

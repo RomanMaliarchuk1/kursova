@@ -1,0 +1,47 @@
+/* Головна секція */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    background: linear-gradient(rgba(53, 58, 64, 0.8), rgba(42, 46, 51, 0.9));
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    color: var(--orange);
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Кнопка CTA */
+.cta-button {
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.cta-button:hover {
+    background-color: #B67232;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(205, 135, 60, 0.3);
+}

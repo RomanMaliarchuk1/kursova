@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import '../index.css';
 import AuthModal from '../components/Auth/AuthModal';
-import Card from '../components/Card/Card';
-import Hero from '../components/Hero/Hero';
-import Header from '../components/Header/Header';
+import Card from '../components/Card';
+import Hero from '../components/Hero';
+import Header from '../components/Header';
 
 export default function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false);

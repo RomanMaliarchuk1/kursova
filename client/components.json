@@ -1,0 +1,7 @@
+{
+    "components": {
+      "dialog": {
+        "path": "./src/components/ui/dialog"
+      }
+    }
+  }

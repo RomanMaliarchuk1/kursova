@@ -8,11 +8,11 @@ export const AuthProvider = ({ children }) => {
     try {
       return storedUser ? JSON.parse(storedUser) : null;
     } catch {
-      return null; // Return null if JSON parsing fails
+      return null;
     }
   };
 
-  const [user, setUser] = useState(getStoredUser);
+  const [user, setUser] = useState(getStoredUser());
   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token'));
 
   useEffect(() => {
@@ -24,23 +24,31 @@ export const AuthProvider = ({ children }) => {
   }, [user]);
 
   const login = (userData, token) => {
-    setUser(userData);
-    setIsAuthenticated(true);
-    localStorage.setItem('token', token); // Save the token
-  };
+    if (userData && token) {
+        setUser(userData);
+        setIsAuthenticated(true);
+        localStorage.setItem('token', token);
+        localStorage.setItem('user', JSON.stringify(userData));
+    } else {
+        console.error("Invalid login data:", userData, token);
+    }
+};
 
   const logout = () => {
     setUser(null);
     setIsAuthenticated(false);
     localStorage.removeItem('user');
-    localStorage.removeItem('token'); // Remove the token on logout
+    localStorage.removeItem('token');
   };
 
+  const currentUserId = user ? user.id : null;
+
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ user, isAuthenticated, currentUserId, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
+// Custom hook to use the AuthContext
 export const useAuth = () => useContext(AuthContext);

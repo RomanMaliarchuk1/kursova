@@ -374,7 +374,7 @@ font-family: inherit; /* Ensure consistency in font */
 
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
-width: 10px;
+width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -383,7 +383,7 @@ background: var(--light-gray);
 
 ::-webkit-scrollbar-thumb {
 background: var(--dark-gray);
-border-radius: 5px;
+border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -401,4 +401,26 @@ color: var(--dark-gray);
 footer p {
 margin: 0;
 font-size: 0.9rem;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms; /* Duration matches the timeout in JS */
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
 }
